@@ -1,28 +1,50 @@
 # LaserWorks
 
-LaserWorks is software that converts SVG Paths to GCODE for CNC machines and 3D Printers.
+LaserWorks is a software tool designed to convert SVG Paths into GCODE, suitable for CNC machines and 3D Printers.
+## Features
 
-### Usage
-- Use metric units.
-- SVG document size should be the same as the size of your machine's working area.
-- Convert all your SVG objects to paths.
-- LaserWorks doesn't currently support "arc".
+- **SVG to GCODE Conversion:** Efficiently converts SVG paths into GCODE.
+- **User-Friendly Interface:** Built using `gtkmm-3.0` for an intuitive user experience.
+- **Metric Units:** Utilizes metric units for precise and standardized measurements.
+- **Customizable Settings:** Allows configuration of machine-specific settings and preferences.
 
-## Build guide
+## Usage Guidelines
 
-### Build requirements
-> gtkmm-3.0
->
-> python3
->
-> cmake >= 3.16
+- Ensure that the SVG document size matches your machine's working area.
+- Convert all SVG objects to paths for compatibility.
+- Please note that LaserWorks currently does not support "arc" path commands.
 
-### Build commands
+## Getting Started
+
+### Prerequisites
+
+Before building LaserWorks, ensure you have the following installed:
+- `gtkmm-3.0`
+- `python3`
+- `cmake` (version 3.16 or higher)
+
+### Build Instructions
+
+To build LaserWorks, run the following commands in your terminal:
+
 ```sh
 cmake . -Bbuild
 cd build
 make
 ```
+
+## Code Structure
+
+### Main Components
+
+- **Interface:** Manages user interactions and the graphical interface.
+- **SVG Parsing:** Parses SVG files and transforms them into path elements.
+- **Path Elements:** Handles different types of path elements like Line, CubicBezier, and QuadraticBezier.
+- **GCODE Generation:** Transforms path elements into GCODE instructions.
+
+## Contribution
+
+Contributions to LaserWorks are welcome! Whether it's improving the code, fixing bugs, or enhancing documentation, your input is valued.
 
 ## License
 
